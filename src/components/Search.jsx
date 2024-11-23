@@ -11,12 +11,12 @@ const Search = () => {
     const [shareholderData, setShareholderData] = useState([])
     const [loading, setLoading] = useState(false);
     const [shareholderdetail, setShareholderdetail]=useState({})
-    // const [print, setPrint]=useState("");
+
 
 
     const handleSearch = async (e) => {
         console.log(searach)
-        // console.log(token)
+
         console.log(localStorage.getItem('token'))
         e.preventDefault();
         setError('');  // Clear any previous errors
@@ -41,14 +41,12 @@ const Search = () => {
 
 
     const handleSearchphone = async (e) => {
-        // console.log(searach)
-        // console.log(token)
+      
         console.log(localStorage.getItem('token'))
         e.preventDefault();
         setError('');  // Clear any previous errors
         setResult(null); // Clear previous result
-//http://10.9.218.75:8085/api/authenticate
-// ${import.meta.env.VITE_API_BASE_URL}phone/${searach}
+
         try {
             const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}admin/phone/${searach}`, {
                 headers: {
@@ -65,14 +63,12 @@ const Search = () => {
     };
 
     const Searchid = async (e) => {
-        // console.log(searach)
-        // console.log(token)
+    
         console.log(localStorage.getItem('token'))
         e.preventDefault();
         setError('');  // Clear any previous errors
         setResult(null); // Clear previous result
-//http://10.9.218.75:8085/api/authenticate
-// ${import.meta.env.VITE_API_BASE_URL}phone/${searach}
+
         try {
             const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}admin/shareid/${searach}`, {
                 headers: {
@@ -183,7 +179,7 @@ const Search = () => {
             {result && (
                     <div className="mt-4 p-4 bg-gray-100 rounded">
                         <h3 className="text-lg font-medium text-gray-800">Search Result:</h3>
-                        {/* <pre className="text-sm text-gray-700">{JSON.stringify(result, null, 2)}</pre> */}
+            
                         <table className="min-w-full border border-gray-300">
                     <thead>
                         <tr className="bg-gray-100 border-b border-gray-300">
@@ -204,7 +200,7 @@ const Search = () => {
                             
                             >
 
-                                {/* shareholder.votingsubscription>0 &&shareholder.sharesubsription>0 ?"":shareholder.votingsubscription==0 && shareholder.sharesubsription==0?"only dividend":"to legal" */}
+                          
                                 <td onClick={shareholder.votingsubscription>0 &&shareholder.sharesubsription>0 ?() => handleRowClick(shareholder):""} className="px-4 py-2">{shareholder.id}</td>
                                 <td  onClick={shareholder.votingsubscription>0 &&shareholder.sharesubsription>0 ?() => handleRowClick(shareholder):""}className="px-4 py-2 text-red-600">{shareholder.votingsubscription>0 &&shareholder.sharesubsription>0 ?"":shareholder.votingsubscription==0 && shareholder.sharesubsription==0?"only dividend":"to legal"}</td>
                                 <td  onClick={shareholder.votingsubscription>0 &&shareholder.sharesubsription>0 ?() => handleRowClick(shareholder):""}className="px-4 py-2">{shareholder.nameamh}</td>
@@ -212,7 +208,7 @@ const Search = () => {
                                 <td onClick={shareholder.votingsubscription>0 &&shareholder.sharesubsription>0 ?() => handleRowClick(shareholder):""}className="px-4 py-2">{shareholder.nameeng}</td>
                                 <td  onClick={shareholder.votingsubscription>0 &&shareholder.sharesubsription>0 ?() => handleRowClick(shareholder):""}className="px-4 py-2">{shareholder.shareholderid}</td>
                                 <td  onClick={shareholder.votingsubscription>0 &&shareholder.sharesubsription>0 ?() => handleRowClick(shareholder):""}className="px-4 py-2">{shareholder.phone}</td>
-                                {/* <td className={shareholder.attendance===1?` px-4 py-2`:"px-4 py-2"}>{shareholder.attendance===1?"Cheked In":" "}</td> */}
+
 
                                 <td className="px-4 py-2">
                 <input 

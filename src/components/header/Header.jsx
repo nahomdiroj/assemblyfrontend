@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import img from "./Logo.png"; 
+import img from "./Logo.png"; // Replace with the correct path
+
 const Header = () => {
     const [isSearchDropdownOpen, setSearchDropdownOpen] = useState(false);
     const [isDisplayDropdownOpen, setDisplayDropdownOpen] = useState(false);
@@ -157,12 +158,13 @@ const Header = () => {
                             className="absolute bg-gray-500 text-white mt-1 rounded shadow-lg z-10"
                             onClick={(e) => e.stopPropagation()}
                         >
-                                <button
-                        onClick={toggleSearchDropdown}
-                        className="flex items-center hover:underline px-1"
-                    >
-                        Attendance
-                        <svg
+                            <button
+                                onClick={toggleAttendanceSubmenu}
+                                className="block w-full text-left px-4 py-2 hover:bg-gray-600 flex items-center hover:underline"
+                            >
+                        
+                                Attendance
+                                <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5 ml-1"
                             viewBox="0 0 20 20"
@@ -174,7 +176,7 @@ const Header = () => {
                                 clipRule="evenodd"
                             />
                         </svg>
-                    </button>
+                            </button>
                             {isAttendanceSubmenuOpen && (
                                 <div className="ml-4 bg-gray-600 rounded shadow-lg">
                                     <Link
@@ -195,10 +197,22 @@ const Header = () => {
                             )}
                             <Link
                                 to="assemblynah/report/voting"
-                                className="block px-4 py-2 hover:bg-gray-600"
+                                className="block px-4 py-2 hover:bg-gray-600 flex items-center hover:underline"
                                 onClick={closeAllDropdowns}
                             >
                                 Voting
+                                <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5 ml-1"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                        >
+                            <path
+                                fillRule="evenodd"
+                                d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clipRule="evenodd"
+                            />
+                        </svg>
                             </Link>
                         </div>
                     )}

@@ -2,30 +2,14 @@ import React from 'react'
 import img from './Logo.png'
 import img2 from './logo2.jpg'
 import { useLocation } from 'react-router-dom';
-import html2pdf from 'html2pdf.js'
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 const JustPrint = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const token = localStorage.getItem('token');
+  
   const { person } = location.state || {};  //
 
-  var opt = {
-    margin: 1,
-    filename: "myfile.pdf",
-    image: { type: "jpeg", quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: "in", format: "letter", orientation: "portrait" }
-  };
 
- // const element =document.querySelector('#print')
-   
-    // html2pdf(element,{
-    //   margin:20,
-    //   filename: person.nameeng
-    // },
-    // opt)
     const printpdf = () => {
     window.print()
     navigate('/assemblynah/searchprint');
@@ -56,15 +40,10 @@ const JustPrint = () => {
                             {person.nameamh}/{person.nameeng}
                             </span>
                       </div>
-{/* 
-                      <p>ሀ. የተፈረመ አክሲዮን   ________________________</p>
-                      <p>ለ. የተከፈለ አክሲዮን   _________________________</p> */}
+
 
 <div className='  text-left '>
-                      {/* ሀ. የተፈረመ አክሲዮን  		_________________________<br />
-                      ለ. የተከፈለ አክሲዮን  		_________________________<br />
-                      ሐ. ያልተከፈለ ቀሪ ገንዘብ 	_________________________<br />
-                      መ. የትርፍ ድርሻ (ከታክስ በፊት) _________________________ */}
+        
                        
                       <div className=' w-3/4 text-base items-center  pb-4  m-auto'>
                       <div className="flex  py-2 items-center">

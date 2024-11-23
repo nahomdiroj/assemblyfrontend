@@ -16,7 +16,7 @@ const Searchprint = () => {
 
     const handleSearch = async (e) => {
         console.log(searach)
-        // console.log(token)
+   
         console.log(localStorage.getItem('token'))
         e.preventDefault();
         setError('');  // Clear any previous errors
@@ -39,14 +39,12 @@ const Searchprint = () => {
     };
 
     const Searchid = async (e) => {
-        // console.log(searach)
-        // console.log(token)
+    
         console.log(localStorage.getItem('token'))
         e.preventDefault();
         setError('');  // Clear any previous errors
         setResult(null); // Clear previous result
-//http://10.9.218.75:8085/api/authenticate
-// ${import.meta.env.VITE_API_BASE_URL}admin/phone/${searach}
+
         try {
             const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}admin/shareid/${searach}`, {
                 headers: {
@@ -63,14 +61,12 @@ const Searchprint = () => {
     };
 
     const handleSearchphone = async (e) => {
-        // console.log(searach)
-        // console.log(token)
+     
         console.log(localStorage.getItem('token'))
         e.preventDefault();
         setError('');  // Clear any previous errors
         setResult(null); // Clear previous result
-//http://10.9.218.75:8085/api/authenticate
-// ${import.meta.env.VITE_API_BASE_URL}admin/phone/${searach}
+
         try {
             const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}admin/phone/${searach}`, {
                 headers: {
@@ -176,7 +172,7 @@ const Searchprint = () => {
             {result && (
                     <div className="mt-4 p-4 bg-gray-100 rounded">
                         <h3 className="text-lg font-medium text-gray-800">Search Result:</h3>
-                        {/* <pre className="text-sm text-gray-700">{JSON.stringify(result, null, 2)}</pre> */}
+                   
                         <table className="min-w-full border border-gray-300">
                     <thead>
                         <tr className="bg-gray-100 border-b border-gray-300">
@@ -201,13 +197,7 @@ const Searchprint = () => {
                                 <td  onClick={() => handleRowClick(shareholder)}className="px-4 py-2">{shareholder.shareholderid}</td>
                                 <td  onClick={() => handleRowClick(shareholder)}className="px-4 py-2">{shareholder.phone}</td>
                                 <td className={shareholder.attendance===1?` px-4 py-2`:"px-4 py-2"}>{shareholder.attendance===1?"Cheked In":" "}</td>
-                                {/* <td className="px-4 py-2">
-                <input 
-                    type="checkbox" 
-                    checked={shareholder.attendance === 1} // Check if attendance is 1 (checked in)
-                    onChange={shareholder.attendance === 1?() => handleAttendanceChange(shareholder.id):() => handleRowClick(shareholder)} // Toggle attendance
-                />
-            </td> */}
+                               
              
                     </tr>
                         ))}

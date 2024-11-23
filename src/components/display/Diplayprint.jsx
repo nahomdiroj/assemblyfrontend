@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const Diplayprint = () => {
     const [attendanceCount, setAttendanceCount] = useState(0);
-    const [sumsub, setSumsub] = useState(0);
+ 
     const [sumvoting, setSumvoting] = useState(0);
     const [sharesSum, setSharesSum] = useState(0);
     const [error, setError] = useState(null);
@@ -42,23 +42,6 @@ const Diplayprint = () => {
 
     
 
-    // const fetchSharesSum = async () => {
-    //     try {
-    //         const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}admin/sumsub `, {
-    //             headers: {
-    //                 Authorization: `Bearer ${token}`  // Include the Bearer token in the request headers
-    //             }
-    //         });
-    
-    //         setSumsub(response.data);// Set result to display response data
-    //         console.log(response.data)
-    //     }catch (err) {
-    //         setError('No results found or an error occurred');
-    //         console.error("Error fetching data:", err);
-    //     }
-    // };
-
-
     const fetchvotingSum = async () => {
         try {
             const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}admin/sumvoting `, {
@@ -77,7 +60,7 @@ const Diplayprint = () => {
 
     const fetchData = () => {
         fetchAttendanceCount();
-        // fetchSharesSum();
+     
         fetchsumsubscription();
         fetchvotingSum();
 
@@ -99,7 +82,7 @@ const Diplayprint = () => {
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-200"> {/* Full-screen background */}
         <div className="flex text-left flex-col items-start justify-center p-6 rounded-lg shadow-md w-full "> {/* Main container */}
-           {/* {Intl.NumberFormat('en-US', ).format(shareholder.paidcapital)} */}
+      
             
             <p className="px-4 bg-gray-100 text-3xl font-semibold w-full">ለስብሰባ የተገኙ የባለአክሲዮኖች ብዛት:</p>
             <p className="px-10 bg-gray-100 text-3xl font-bold w-full"> {Intl.NumberFormat('en-US', ).format(attendanceCount)}</p>

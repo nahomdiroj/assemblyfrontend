@@ -8,29 +8,6 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   
-  // const handleLogin = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await axios.post('http://localhost:8080/authenticate', {
-  //       "username":username,
-  //       "password":password,
-  //     });
-
-  //     // Store the JWT token in localStorage
-  //     localStorage.setItem('token', response.data.token);
-  //     console.log(token+"token")
-
-  //     // Clear form and error, navigate to home or dashboard (customize as needed)
-  //     setUsername('');
-  //     setPassword('');
-  //     setError('');
-  //     // Redirect user or update app state to indicate they are logged in
-
-  //   } catch (error) {
-  //     setError('Invalid username or password
-  //http://10.1.12.43:8085/assemblynahom/api/authenticate');
-  //  http://10.1.12.69:8085/api/authenticate }
-  //http://localhost:8080/api/authenticate };
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
